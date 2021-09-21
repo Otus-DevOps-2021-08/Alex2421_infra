@@ -3,10 +3,12 @@
 
 Для подключения к Host через ssh используются алиасы добавляем их в ~/.ssh/config:
 
+
   HostName 178.154.221.235
   Port 22
   User appuser
   IdentityFile ~/.ssh/appuser
+
 
 Host someinternalhost
   HostName 10.128.0.5
