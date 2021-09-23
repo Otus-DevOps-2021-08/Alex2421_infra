@@ -1,36 +1,26 @@
 # Alex2421_infra
 
 
-//Для подключения к Host через ssh используются алиасы добавляем их в ~/.ssh/config:
+Задание Управление ресурсами yandex cloud через YC
+
+testapp_IP = 178.154.255.123
+testapp_port = 9292
+
+Задание:
+
+Создание виртуалки с запущенным сервисом скрипт находится instance.sh параметры в user-data.yml
+
+yc compute instance create
+--name reddit-app-auto
+--hostname reddit-app2
+--cores=2
+--memory=4
+--core-fraction=20
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB
+--network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4
+--metadata serial-port-enable=1
+--metadata-from-file user-data=./user-data.yml
 
 
-  HostName 178.154.221.235
-  Port 22
-  User appuser
-  IdentityFile ~/.ssh/appuser
 
-
-Host someinternalhost
-  HostName 10.128.0.5
-  ProxyJump bastion
-  Port 22
-  User appuser
-  IdentityFile ~/.ssh/appuser
-
-
-//После настроек можно использовать:
-
-alias someinternalhost='ssh someinternalhost'
-
-//IP адреса
-bastion = 178.154.222.53
-someinternalhost = 10.128.0.11
-
-
-//Дополнительное задание:
-
-WEB-интерфейс pritunl: https://178.154.222.53/setup
-
-#адрес инстанса и портсервера
-
-http://178.154.255.123:9292/
+Приложение доступно по адресу:  http://178.154.255.123:9292/
