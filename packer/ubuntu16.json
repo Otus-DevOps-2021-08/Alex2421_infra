@@ -9,6 +9,7 @@
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
+            "subnet_id": "enpf9sdsdtvi7ihm27qm",
             "zone": "ru-central1-b",
             "use_ipv4_nat": "true"
         }
