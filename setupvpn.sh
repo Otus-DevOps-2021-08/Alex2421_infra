@@ -1,4 +1,5 @@
 #!/bin/bash
+
 deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
 deb https://repo.pritunl.com/stable/apt focal main
 EOF
@@ -9,4 +10,3 @@ sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-org
 sudo systemctl start pritunl mongod
 sudo systemctl enable pritunl mongod
-EOF
