@@ -1,4 +1,5 @@
 #!/bin/bash
+
 yc compute instance create \
   --name reddit-app2 \
   --hostname reddit-app2 \
@@ -8,3 +9,4 @@ yc compute instance create \
   --core-fraction=5 \
   --metadata serial-port-enable=1 \
   --metadata-from-file user-data=metadata.yml
+  
