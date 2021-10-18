@@ -1,5 +1,5 @@
 provider "yandex" {
-  version                  = "~> 0.35"
+  version                  = "~> 1.0.8"
   service_account_key_file = var.service_account_key_file
   cloud_id                 = var.cloud_id
   folder_id                = var.folder_id
