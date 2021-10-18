@@ -1,9 +1,9 @@
 
 provider "yandex" {
-  service_account_key_file = var.service_account_key_file
-  cloud_id  = var.cloud_id
-  folder_id = var.folder_id
-  zone      = var.zone
+  token     = "<AQAAAABYZt-jAATuwdBzPvdq5UNKl-seDYXPy5o>"
+  cloud_id  = "<b1g82cmdr725av5n3qar>"
+  folder_id = "<b1g12ajnlaesj6c89gcd>"
+  zone      = "ru-central1-a"
 }
 
 
