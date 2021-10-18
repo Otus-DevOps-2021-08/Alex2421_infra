@@ -1,10 +1,18 @@
-
+terraform {
+  required_providers {
+    yandex = {
+      source  = "yandex-cloud/yandex"
+      version = "0.61.0"
+    }
+  }
+}
 provider "yandex" {
   token     = "<AQAAAABYZt-jAATuwdBzPvdq5UNKl-seDYXPy5o>"
   cloud_id  = "<b1g82cmdr725av5n3qar>"
   folder_id = "<b1g12ajnlaesj6c89gcd>"
   zone      = "ru-central1-a"
 }
+
 
 
 resource "yandex_compute_instance" "app" {
