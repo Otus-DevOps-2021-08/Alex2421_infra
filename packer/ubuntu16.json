@@ -2,27 +2,24 @@
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "./key.json",
-            "folder_id": "b1g12ajnlaesj6c89gcd",
-            "source_image_family": "ubuntu-1604-lts",
+            "service_account_key_file": "{{user `key_file`}}",
+            "folder_id": "{{user `f_id`}}",
+            "source_image_family": "{{user `image`}}",
             "image_name": "reddit-base-{{timestamp}}",
-            "image_family": "reddit-base",
+            "image_family": "{{user `family`}}",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
-            "subnet_id": "e2ljfge7scm37uvjd3v4",
-            "zone": "ru-central1-a",
-            "use_ipv4_nat": "true"
+            "subnet_id": "e9binldg2djbcg5r2uab",
+            "use_ipv4_nat": true
         }
     ],
     "provisioners": [
         {
             "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
-        },
-        {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
+            "scripts": [
+              "scripts/install_ruby.sh",
+              "scripts/install_mongodb.sh"
+	    ],
             "execute_command": "sudo {{.Path}}"
         }
     ]
