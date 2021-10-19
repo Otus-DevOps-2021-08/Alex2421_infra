@@ -1,8 +1,6 @@
 {
-  "SA_KEY_FILE_PATH": "../key.json",
-  "FOLDER_ID": "yc_folder_id",
-  "SOURCE_IMAGE_FAMILY": "ubuntu-1604-lts",
-  "IMAGE_NAME": "reddit-base",
-  "IMAGE_FAMILY": "reddit-base",
-  "IMAGE_SIZE_GB": "5"
+    "f_id": "1234563",
+    "image": "ubuntu-1604-lts",
+    "key_file": "packer/files/some_key",
+    "skip": "false"
 }
