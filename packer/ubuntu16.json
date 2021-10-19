@@ -13,43 +13,19 @@
             "zone": "ru-central1-a",
             "use_ipv4_nat": "true"
         }
-    ],
-    "provisioners": [
-        {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
-        },
-        {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
-        }
-    ]
+      ],
+   "provisioners": [
+       {
+           "type": "shell",
+           "script": "scripts/install_ruby.sh",
+           "execute_command": "sudo {{.Path}}"
+       },
+       {
+           "type": "shell",
+           "script": "scripts/install_mongodb.sh",
+           "execute_command": "sudo {{.Path}}"
+       }
+   ]
 }
-{
-    "builders": [
-        {
-            "type": "yandex",
-            "service_account_key_file": "вставьте путь до своего",
-            "folder_id": "вставьте свой",
-            "source_image_id": "вставьте полученный ID",
-            "image_name": "reddit-base-{{timestamp}}",
-            "image_family": "reddit-base",
-            "ssh_username": "ubuntu",
-            "platform_id": "standard-v1"
-        }
-    ],
-    "provisioners": [
-        {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
-        },
-        {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
-        }
-    ]
-}
+
+b1g12ajnlaesj6c89gcd
