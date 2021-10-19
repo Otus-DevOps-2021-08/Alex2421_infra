@@ -9,7 +9,7 @@
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
-            "subnet_id": "e9ba054eetml2pukco3n",
+
             "zone": "ru-central1-a",
             "use_ipv4_nat": "true"
         }
@@ -27,5 +27,3 @@
        }
    ]
 }
-
-b1g12ajnlaesj6c89gcd
