@@ -8,8 +8,8 @@
             "image_name": "reddit-base-{{timestamp}}",
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
-            "use_ipv4_nat": = true,
             "platform_id": "standard-v1"
+            "use_ipv4_nat": "true"
         }
       ],
           "provisioners": [
