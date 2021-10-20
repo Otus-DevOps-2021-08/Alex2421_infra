@@ -8,4 +8,4 @@ yc compute instance create \
   --create-boot-disk image-id=fd86luoo6asj33i6otnq,size=10GB \
   --network-interface subnet-id=e9bje33hq7gr7366705p,nat-ip-version=ipv4 \
   --metadata serial-port-enable=1 \
-  --ssh-key ~/.ssh/id_rsa.pub
+  --ssh-key ~/.ssh/appuser.pub
