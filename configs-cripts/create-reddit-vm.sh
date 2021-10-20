@@ -1,12 +1,11 @@
 #!/bin/bash
-
+# create VM from backed image with image-id=fd86luoo6asj33i6otnq (has ruby, mongodb, reddit autorun as ubuntu service)
 yc compute instance create \
-  --name reddit-vm \
-  --hostname reddit-vm \
+  --name reddit-full-autorun \
+  --hostname reddit-full-autorun \
   --cores=2 \
-  --memory=2 \
-  --core-fraction=20 \
-  --create-boot-disk image-id=fd8vkmrjb10ge19blod1,size=10GB \
-  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --memory=4 \
+  --create-boot-disk image-id=fd86luoo6asj33i6otnq,size=10GB \
+  --network-interface subnet-id=e9bje33hq7gr7366705p,nat-ip-version=ipv4 \
   --metadata serial-port-enable=1 \
   --ssh-key ~/.ssh/appuser.pub
