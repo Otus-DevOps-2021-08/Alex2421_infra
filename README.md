@@ -1,9 +1,9 @@
 # Alex2421_infra
 
-
+Cloud-testapp
 Задание Управление ресурсами yandex cloud через YC
 
-testapp_IP = 178.154.231.86
+testapp_IP = http://178.154.200.187
 testapp_port = 9292
 
 Задание:
@@ -23,4 +23,4 @@ yc compute instance create
 
 
 
-Приложение доступно по адресу:  http://178.154.231.86:9292/
+Приложение доступно по адресу:  http://178.154.200.187:9292/
