@@ -1,61 +1,57 @@
 terraform {
   required_providers {
     yandex = {
-      source  = "yandex-cloud/yandex"
-      version = "0.61.0"
+      source = "yandex-cloud/yandex"
     }
   }
 }
 provider "yandex" {
-  token     = "<AQAAAABYZt-jAATuwdBzPvdq5UNKl-seDYXPy5o>"
-  cloud_id  = "<b1g82cmdr725av5n3qar>"
-  folder_id = "<b1g12ajnlaesj6c89gcd>"
-  zone      = "ru-central1-a"
+  token     = "AQAAAABYZt-jAATuwdBzPvdq5UNKl-seDYXPy5o"
+  cloud_id  = var.cloud_id
+  folder_id = var.folder_id
+  zone      = var.zone
 }
 
-
-
 resource "yandex_compute_instance" "app" {
-  count = var.instances
-  name  = "reddit-app-${count.index}"
+  name = "reddit-app"
 
   resources {
-    cores         = 2
-    memory        = 2
-    core_fraction = 20
+    cores  = 2
+    memory = 2
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
+      # Указать id образа созданного в предыдущем домашем задании
       image_id = var.image_id
     }
   }
 
-  network_interface {
+network_interface {
+    # Указан id подсети default-ru-central1-a
     subnet_id = var.subnet_id
     nat       = true
   }
 
-  metadata = {
-    ssh-keys = "ubuntu:${file(var.public_key_path)}"
+metadata = {
+  ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
 
   connection {
-    type  = "ssh"
-    host  = self.network_interface.0.nat_ip_address
-    user  = "ubuntu"
-    agent = false
-    # путь до приватного ключа
-    private_key = file(var.private_key_path)
+  type = "ssh"
+  host = yandex_compute_instance.app.network_interface.0.nat_ip_address
+  user = "ubuntu"
+  agent = false
+  # путь до приватного ключа
+  private_key = file("~/.ssh/ubuntu")
   }
 
   provisioner "file" {
-    source      = "files/puma.service"
-    destination = "/tmp/puma.service"
+  source = "files/puma.service"
+  destination = "/tmp/puma.service"
   }
 
   provisioner "remote-exec" {
-    script = "files/deploy.sh"
+  script = "files/deploy.sh"
   }
-
 }
