@@ -1,40 +1,24 @@
-variable "cloud_id" {
-  description = "cloud_id from yandex"
+variable cloud_id{
+  description = "Cloud"
 }
-
-variable "folder_id" {
-  description = "Folder from yandex console"
+variable folder_id {
+  description = "Folder"
 }
-
-variable "zone" {
+variable zone {
   description = "Zone"
+  # Значение по умолчанию
+  default = "ru-central1-a"
 }
-
-variable "image_id" {
-  description = "image id that we use"
+variable public_key_path {
+  # Описание переменной
+  description = "Path to the public key used for ssh access"
 }
-
-variable "subnet_id" {
-  description = "subnet id that we use"
+variable image_id {
+  description = "Disk image"
 }
-
-variable "public_key_path" {
-  description = "public_key_path that we use"
+variable subnet_id{
+  description = "Subnet"
 }
-
-variable "private_key_path" {
-  description = "private_key_path that we use"
-}
-
-variable service_account_key_file {
+variable service_account_key_file{
   description = "key .json"
-}
-
-variable region_id {
-  description = "region"
-}
-
-variable instances {
-  description = "count instances"
-  default     = 1
 }
