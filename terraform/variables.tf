@@ -1,4 +1,4 @@
-ariable cloud_id {
+variable cloud_id {
   description = "Cloud"
 }
 variable folder_id {
