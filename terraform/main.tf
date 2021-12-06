@@ -8,8 +8,8 @@ terraform {
 provider "yandex" {
   token     = "<AQAAAABYZt-jAATuwdBzPvdq5UNKl-seDYXPy5o>"
   cloud_id = var.cloud_id
-folder_id = var.folder_id
-zone = var.zone
+  folder_id = var.folder_id
+  zone = var.zone
 }
 
 
